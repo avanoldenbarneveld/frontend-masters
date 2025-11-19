@@ -1,17 +1,27 @@
 // TODO: write `findAll(..)`
 function findAll(value, array) {
+	// we create an empty array
 	const result = [];
 
+	// we check each element of the array to see if it matches the value according to the rule.
 	for (let elem of array) {
+
+		// first rule: exact match with Object.is
 		if (Object.is(value, elem)) {
 			result.push(elem)
 		}
-
+		// second rule: if value is string and elem is number
 		else if (typeof value === 'string' && typeof elem == 'number') {
+
+			// trim value
 			const trimmedValue = value.trim()
+
+			// check length
 			if (trimmedValue.length > 0) { }
 		}
 	}
+
+	// return resulting array
 	return result
 }
 
