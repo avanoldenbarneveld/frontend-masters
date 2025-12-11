@@ -1,7 +1,7 @@
 var deepJS = {
 	currentEnrollment: [],
 	studentRecords: [],
-	addStudent(id,name,paid) {
+	addStudent(id, name, paid) {
 		this.studentRecords.push({ id, name, paid, });
 	},
 	enrollStudent(id) {
@@ -35,7 +35,7 @@ var deepJS = {
 
 		records.forEach(this.printRecord);
 	},
-	sortByNameAsc(record1,record2){
+	sortByNameAsc(record1, record2) {
 		if (record1.name < record2.name) return -1;
 		else if (record1.name > record2.name) return 1;
 		else return 0;
@@ -48,7 +48,7 @@ var deepJS = {
 
 		var idsToEnroll = recordsToEnroll.map(this.getStudentId);
 
-		return [ ...this.currentEnrollment, ...idsToEnroll ];
+		return [...this.currentEnrollment, ...idsToEnroll];
 	},
 	needToEnroll(record) {
 		return (record.paid && !this.currentEnrollment.includes(record.id));
@@ -70,15 +70,15 @@ var deepJS = {
 
 // ********************************
 
-deepJS.addStudent(311,"Frank",/*paid=*/true);
-deepJS.addStudent(410,"Suzy",/*paid=*/true);
-deepJS.addStudent(709,"Brian",/*paid=*/false);
-deepJS.addStudent(105,"Henry",/*paid=*/false);
-deepJS.addStudent(502,"Mary",/*paid=*/true);
-deepJS.addStudent(664,"Bob",/*paid=*/false);
-deepJS.addStudent(250,"Peter",/*paid=*/true);
-deepJS.addStudent(375,"Sarah",/*paid=*/true);
-deepJS.addStudent(867,"Greg",/*paid=*/false);
+deepJS.addStudent(311, "Frank",/*paid=*/true);
+deepJS.addStudent(410, "Suzy",/*paid=*/true);
+deepJS.addStudent(709, "Brian",/*paid=*/false);
+deepJS.addStudent(105, "Henry",/*paid=*/false);
+deepJS.addStudent(502, "Mary",/*paid=*/true);
+deepJS.addStudent(664, "Bob",/*paid=*/false);
+deepJS.addStudent(250, "Peter",/*paid=*/true);
+deepJS.addStudent(375, "Sarah",/*paid=*/true);
+deepJS.addStudent(867, "Greg",/*paid=*/false);
 
 deepJS.enrollStudent(410);
 deepJS.enrollStudent(105);
