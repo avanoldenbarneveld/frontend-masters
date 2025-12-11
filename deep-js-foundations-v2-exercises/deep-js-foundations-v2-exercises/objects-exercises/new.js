@@ -20,9 +20,24 @@ let deepJS = {
     this.remindUnpaid(this.currentEnrollment);
   },
   getStudentFromId(studentId) {
-    return this.studentRecords.find(this.matchId)
+    this.studentId = studentId
+    return this.studentRecords.find(this.matchId.bind(this))
   },
   matchId(record) {
-    return (record.id == studentId);
+    return (record.id == this.studentId);
+  },
+
+  printRecords(recordIds) {
+    let records = recordIds.map(this.getStudentFromId.bind(this));
+
+    records.sort(this.sortByNameAsc);
+
+    records.forEach(this.printRecord);
+  },
+
+  enrollPaidStudents() {
+    this.currentEnrollment = this.paidStudentsToEnroll.bind(this);
+    printCurrentEnrollment();
   }
+
 }
